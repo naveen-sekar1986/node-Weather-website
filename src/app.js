@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 const hbs =require('hbs')
 const { get } = require('http')
 const geocode = require('./utils/geocode')
@@ -93,8 +94,8 @@ app.get('*', (req, res)=>{
         
 
 
-app.listen(3000,() => {
-    console.log('Server started at port 3000')
+app.listen(port,() => {
+    console.log('Server started at port '+port)
 })
 
 // app.get('/help', (req, res) => {
