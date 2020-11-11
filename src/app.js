@@ -59,14 +59,14 @@ app.get('/weather', (req, res) => {
         return res.send('Please provide an Address')
     }
 
-            forecast(req.query.address, (error,locationdata) => {
+            forecast(req.query.address, (error,locationdata,icon_url) => {
                 if (error) {
                 return res.send({error:error})
                 }
 
                 res.send({
                     forecast: locationdata,
-                  
+                    icon:icon_url,
                     address: req.query.address
                     
 
