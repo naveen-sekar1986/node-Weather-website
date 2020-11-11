@@ -23,9 +23,7 @@ app.set('views',Templadtedir)
 hbs.registerPartials(Partialpath)
 
 app.get('', (req, res) => {
-    // if (!req.query.address) {
-    //     return res.send('you must provide a Address')
-    // }
+   
     res.render('index', {
         title: 'Weather App',
         name:'Naveen Sekar'
@@ -61,10 +59,6 @@ app.get('/weather', (req, res) => {
         return res.send('Please provide an Address')
     }
 
-    // geocode(req.query.address, (error,{latitude,longitude,location}) => {
-    //     if (error) {
-    //         return res.send({error:error})
-    //     }
             forecast(req.query.address, (error,locationdata) => {
                 if (error) {
                 return res.send({error:error})
@@ -72,7 +66,7 @@ app.get('/weather', (req, res) => {
 
                 res.send({
                     forecast: locationdata,
-                   // location,
+                  
                     address: req.query.address
                     
 
@@ -82,7 +76,7 @@ app.get('/weather', (req, res) => {
             
         
     })
-// })
+
 
 app.get('*', (req, res)=>{
     res.render('404', {
@@ -97,12 +91,3 @@ app.get('*', (req, res)=>{
 app.listen(port,() => {
     console.log('Server started at port '+port)
 })
-
-// app.get('/help', (req, res) => {
-//     res.send('<h1>help</h1>')
-// })
-
-// app.get('/about', (req, res) => {
-//     res.send('About page')
-// })
-
