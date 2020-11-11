@@ -23,7 +23,7 @@ weatherform.addEventListener('submit', (e) => {
                 message1.textContent = location 
                 message2.textContent = data.forecast
                 weathericon.src = data.icon[0]
-                console.log(data.icon[0])
+                console.log(data)
             }
         })
     })

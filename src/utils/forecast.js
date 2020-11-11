@@ -13,7 +13,8 @@ const forcast = (quary, callback) => {
             }
             else {
               //  console.log('weather desc',response.body.current.weather_descriptions)
-                callback(undefined, response.body.location.country + ' ' + response.body.current.weather_descriptions + ' Current temperature ' + response.body.current.temperature + ' celcius',
+                callback(undefined, response.body.location.country + ' ' + response.body.current.weather_descriptions + ' Current temperature ' + response.body.current.temperature + ' celcius ' + 'feels like '
+                +response.body.current.feelslike+' '+'cloud cover ' +response.body.current.cloudcover,
                 response.body.current.weather_icons)
             }
     })
